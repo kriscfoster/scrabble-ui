@@ -1,0 +1,29 @@
+.container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.square {
+    display: inline-block;
+    vertical-align: middle;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: rgb(82, 187, 72);
+    margin: 1px;
+}
+
+.triple-word {
+  background-color: rgb(255, 65, 65);
+}
+
+.double-word {
+  background-color: rgb(255, 200, 200);
+}
+
+.triple-letter {
+  background-color: rgb(12, 166, 255);
+}
+
+.double-letter {
+  background-color: rgb(161, 220, 255);
+}
