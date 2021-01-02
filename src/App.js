@@ -8,17 +8,13 @@ function App() {
 
   useEffect(() => {
     const apiUrl = 'http://localhost:8080/boards';
-    fetch(apiUrl)
-      .then((res) => res.json())
-      .then((board) => {
-        setAppState({ board });
-      });
+    fetch(apiUrl).then((res) => res.json()).then((board) => setAppState({ board }));
   }, [setAppState]);
 
   return (
     <div className='App'>
       <div className='container'>
-        <Board board={appState.board}/>
+        <Board board={appState.board} setAppState={setAppState}/>
       </div>
     </div>
   );
