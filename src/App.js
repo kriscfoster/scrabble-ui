@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import Board from './components/Board';
+import Tray from './components/Tray';
 
 function App() {
-  const [appState, setAppState] = useState({
+  const [boardState, setBoardState] = useState({
     board: {},
+  });
+
+  const [trayState, setTrayState] = useState({
+    tray: [' ', ' ', ' ', ' ', ' ', ' ', ' '],
   });
 
   useEffect(() => {
     const apiUrl = 'http://localhost:8080/boards';
-    fetch(apiUrl).then((res) => res.json()).then((board) => setAppState({ board }));
-  }, [setAppState]);
+    fetch(apiUrl).then((res) => res.json()).then((board) => setBoardState({ board }));
+  }, [setBoardState]);
 
   return (
     <div className='App'>
       <div className='container'>
-        <Board board={appState.board} setAppState={setAppState}/>
+        <Board board={boardState.board} setBoardState={setBoardState}/>
+        <Tray tray={trayState.tray} setTrayState={setTrayState}/>
       </div>
     </div>
   );

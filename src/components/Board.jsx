@@ -1,8 +1,9 @@
 import React from 'react';
 import Row from './Row';
+import { isValidLetter } from '../utils';
 
 export default function Board(props) {
-  const { board, setAppState } = props;
+  const { board, setBoardState } = props;
 
 
   function handleTileClicked(e) {
@@ -15,22 +16,18 @@ export default function Board(props) {
     if (e.target.className.includes('tile')) {
       board.spaces[location[0]][location[1]].tile = null;
     } else {
-      var letter = prompt("Please enter a letter:");
-      if (!isValidLetter(letter)) return;
+      const letter = prompt("Please enter a letter:");
+      if (!letter || !isValidLetter(letter)) return;
       board.spaces[location[0]][location[1]].tile = {
         letter: letter,
       }
     }
 
-    setAppState({ board });
-  }
-
-  function isValidLetter(letter) {
-    return letter.length === 1 && letter.match(/[A-Z]/g);
+    setBoardState({ board });
   }
 
   return (
-    <div onClick={handleTileClicked}>
+    <div onClick={handleTileClicked} className='board'>
       { board.spaces && board.spaces.map((row, i) => <Row row={row} y={i} key={i}/>) }
     </div>
   );

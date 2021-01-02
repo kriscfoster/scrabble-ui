@@ -4,11 +4,11 @@
 
 .container {
   text-align: center;
-  background-color: green;
   display: block;
   padding: 2px;
   float: left;
   margin: auto;
+  padding: 50px;
 }
 
 .square {
@@ -40,4 +40,16 @@
 .tile {
   background-color: rgb(253, 253, 187);
   font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.board {
+  background-color: rgb(0, 131, 0);
+  border: 3px solid rgb(0, 131, 0);
+}
+
+.tray {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: rgb(0, 131, 0);
 }
