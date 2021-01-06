@@ -1,9 +1,7 @@
 import React from 'react';
 import { isValidLetter } from '../utils';
 
-export default function Tray(props) {
-  const { tray, setTrayState } = props;
-
+export default function Tray({ tray, setTrayState }) {
   function handleTileClicked(i) {
     const letter = prompt("Please enter a letter:");
     if (!letter || !isValidLetter(letter)) return;
